@@ -13,5 +13,6 @@ node {
                 checkout scm
         }
     def packageJson =  jsonParse(readFile("package.json"))
-    println(packageJson.name);
+    def appName = packageJson['name'].replace('@flightstats/', '');
+    println(appName);
 }
